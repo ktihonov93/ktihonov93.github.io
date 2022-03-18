@@ -10,7 +10,7 @@ export default function PokemonCard({ id, pokemon, storedPokemon, addPokemonToCa
   return (
     <article className='PokemonCard'>
       <Card sx={{ width: 220, backgroundColor: "burlywood" }}>
-        <Link to={{ pathname: `/final-project/${id}` }}>
+        <Link to={{ pathname: `/${id}` }}>
           <CardContent>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
               id: {id}

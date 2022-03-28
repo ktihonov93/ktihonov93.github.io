@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
+import { PokemonContext } from '../../Utils/PokemonContext'
 import LoadingSpinner from "../LoadingSpinner";
 import './PokemonDetails.css'
 
-export default function PokemonDetails({ caught }) {
+export default function PokemonDetails() {
     const { id } = useParams();
+    const { caught } = useContext(PokemonContext);
 
     const [pokemon, setPokemon] = useState(null);
     const [loading, setLoading] = useState(true);

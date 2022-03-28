@@ -1,23 +1,26 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Containers/Home'
 import Header from './Containers/Header'
-import CaughtPokemonList from './Containers/CaughtPokemonList'
+import CaughtPokemonList from './Containers/CaughtPokemonList';
+import PokemonDetails from './Components/PokemonDetails';
+import PokemonList from './Containers/PokemonList'
 import { PokemonProvider } from './Utils/PokemonContext'
 import './App.css';
 
 function App() {
+
   return (
-    
-      <Router>
-        <PokemonProvider>
+
+    <Router>
+      <PokemonProvider>
         <Header />
         <Routes>
-          <Route exact path="*" element={<Home />} />
+          <Route path="/" element={<PokemonList />} />
+          <Route path="/:id" element={<PokemonDetails />} />
           <Route exact path="/caught" element={<CaughtPokemonList />} />
         </Routes>
-        </PokemonProvider>
-      </Router>
-    
+      </PokemonProvider>
+    </Router>
+
   );
 }
 
